@@ -15,14 +15,15 @@ type User struct {
 }
 
 type Booking struct {
-	ID          int       `json:"id"`
-	UserID      int       `json:"user_id"`
-	SessionID   int       `json:"session_id"`
-	PaymentID   string    `json:"payment_id,omitempty"`
-	Status      string    `json:"status"`
-	TotalAmount int       `json:"total_amount_cents"`
-	CreatedAt   time.Time `json:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at"`
+	ID          int        `json:"id"`
+	UserID      int        `json:"user_id"`
+	SessionID   int        `json:"session_id"`
+	PaymentID   string     `json:"payment_id,omitempty"`
+	Status      string     `json:"status"`
+	TotalAmount int        `json:"total_amount_cents"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
+	CancelledAt *time.Time `json:"cancelled_at,omitempty"`
 }
 
 type Seat struct {
