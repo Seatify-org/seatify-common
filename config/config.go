@@ -20,7 +20,7 @@ func Load() *Config {
 		DBPort:     getEnv("DB_PORT", "5432"),
 		DBUser:     getEnv("DB_USER", "seatify"),
 		DBPassword: getEnv("DB_PASSWORD", "seatify_password"),
-		DBName:     getEnv("DB_NAME", "booking_db"),
+		DBName:     getEnv("DB_NAME", "seatify"),
 		ServerPort: getEnv("SERVER_PORT", "8082"),
 		LogLevel:   getEnv("LOG_LEVEL", "info"),
 	}
