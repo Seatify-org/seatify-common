@@ -12,20 +12,36 @@ type User struct {
 }
 
 type Movie struct {
-	ID          int       `json:"id"`
-	Title       string    `json:"title"`
-	Description string    `json:"description"`
-	Duration    int       `json:"duration_minutes"`
-	ReleaseDate time.Time `json:"release_date"`
-	PosterURL   string    `json:"poster_url"`
+	ID          int      `json:"id"`
+	Title       string   `json:"title"`
+	Description string   `json:"description"`
+	Duration    int      `json:"duration_minutes"`
+	ReleaseDate string   `json:"release_date"` // YYYY-MM-DD
+	PosterURL   string   `json:"poster_url"`
+	BannerURL   string   `json:"banner_url,omitempty"`
+	TrailerURL  string   `json:"trailer_url,omitempty"`
+	Genres      []string `json:"genres"`
+	Cast        []string `json:"cast,omitempty"`
+	Director    string   `json:"director,omitempty"`
+	Rating      float64  `json:"rating,omitempty"`
 	CreatedAt   time.Time `json:"created_at"`
 }
 
 type Cinema struct {
-	ID      int    `json:"id"`
-	Name    string `json:"name"`
-	Address string `json:"address"`
-	City    string `json:"city"`
+	ID                 int      `json:"id"`
+	Name               string   `json:"name"`
+	Address            string   `json:"address"`
+	City               string   `json:"city"`
+	Latitude           float64  `json:"latitude,omitempty"`
+	Longitude          float64  `json:"longitude,omitempty"`
+	Rating             float64  `json:"rating,omitempty"`
+	Facilities         []string `json:"facilities,omitempty"`
+	InfrastructureTags []string `json:"infrastructure_tags,omitempty"`
+	ImageURL           string   `json:"image_url,omitempty"`
+	IntegrationLevel   int      `json:"integration_level"` // 1, 2, 3
+	PhoneNumber        string   `json:"phone_number,omitempty"`
+	TotalHalls         int      `json:"total_halls,omitempty"`
+	CreatedAt          time.Time `json:"created_at"`
 }
 
 type Hall struct {
@@ -33,7 +49,9 @@ type Hall struct {
 	CinemaID     int    `json:"cinema_id"`
 	Name         string `json:"name"`
 	Rows         int    `json:"rows"`
+	TotalSeats int   `json:"total_seats,omitempty"`
 	SeatsPerRow  int    `json:"seats_per_row"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 type Session struct {
