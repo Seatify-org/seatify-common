@@ -35,22 +35,24 @@ type Seat struct {
 	Status     string `json:"status"`
 }
 
-type Movie struct {
-	ID             int    `json:"id"`
-	Title          string `json:"title"`
-	Description    string `json:"description"`
-	DurationMinutes int   `json:"duration_minutes"`
-	ReleaseDate    string `json:"release_date"`
-	PosterURL      string `json:"poster_url"`
-}
-
 type Session struct {
 	ID            int       `json:"id"`
 	MovieID       int       `json:"movie_id"`
 	HallID        int       `json:"hall_id"`
 	HallName      string    `json:"hall_name"`
+	CinemaID      int       `json:"cinema_id"`
 	CinemaName    string    `json:"cinema_name"`
 	CinemaAddress string    `json:"cinema_address"`
+	CinemaCity    string    `json:"cinema_city"`
 	StartTime     time.Time `json:"start_time"`
 	PriceCents    int       `json:"price_cents"`
+}
+
+type Movie struct {
+	ID             int       `json:"id"`
+	Title          string    `json:"title"`
+	Description    string    `json:"description"`
+	DurationMinutes int      `json:"duration_minutes"`
+	ReleaseDate    time.Time `json:"release_date"`
+	PosterURL      string    `json:"poster_url"`
 }
