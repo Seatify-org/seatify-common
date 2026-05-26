@@ -2,7 +2,6 @@ package model
 
 import "time"
 
-// User уже должен быть, проверьте наличие полей
 type User struct {
 	ID        int       `json:"id"`
 	Email     string    `json:"email"`
@@ -12,7 +11,6 @@ type User struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// Movie - новая структура
 type Movie struct {
 	ID          int       `json:"id"`
 	Title       string    `json:"title"`
@@ -23,7 +21,6 @@ type Movie struct {
 	CreatedAt   time.Time `json:"created_at"`
 }
 
-// Cinema - новая структура
 type Cinema struct {
 	ID      int    `json:"id"`
 	Name    string `json:"name"`
@@ -31,7 +28,6 @@ type Cinema struct {
 	City    string `json:"city"`
 }
 
-// Hall - новая структура
 type Hall struct {
 	ID           int    `json:"id"`
 	CinemaID     int    `json:"cinema_id"`
@@ -40,20 +36,20 @@ type Hall struct {
 	SeatsPerRow  int    `json:"seats_per_row"`
 }
 
-// Session - новая структура (обновленная)
 type Session struct {
-	ID            int       `json:"id"`
-	MovieID       int       `json:"movie_id"`
-	HallID        int       `json:"hall_id"`
-	CinemaID      int       `json:"cinema_id"`       // Добавлено
-	CinemaAddress string    `json:"cinema_address"`  // Добавлено (для удобства)
-	CinemaCity    string    `json:"cinema_city"`     // Добавлено
-	StartTime     time.Time `json:"start_time"`
-	BasePriceCents int      `json:"base_price_cents"`
-	CreatedAt     time.Time `json:"created_at"`
+	ID             int       `json:"id"`
+	MovieID        int       `json:"movie_id"`
+	HallID         int       `json:"hall_id"`
+	CinemaID       int       `json:"cinema_id"`
+	CinemaAddress  string    `json:"cinema_address"`
+	CinemaCity     string    `json:"cinema_city"`
+	HallName       string    `json:"hall_name"`       // <--- ДОБАВИТЬ
+	CinemaName     string    `json:"cinema_name"`     // <--- ДОБАВИТЬ
+	StartTime      time.Time `json:"start_time"`
+	BasePriceCents int       `json:"base_price_cents"`
+	CreatedAt      time.Time `json:"created_at"`
 }
 
-// Seat - новая структура
 type Seat struct {
 	ID          int    `json:"id"`
 	HallID      int    `json:"hall_id"`
@@ -63,7 +59,6 @@ type Seat struct {
 	PriceCents  int    `json:"price_cents"`
 }
 
-// Booking уже должна быть, проверьте поля
 type Booking struct {
 	ID             int        `json:"id"`
 	UserID         int        `json:"user_id"`
