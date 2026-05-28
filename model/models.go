@@ -63,10 +63,11 @@ type Hall struct {
 	ID          int       `json:"id"`
 	CinemaID    int       `json:"cinema_id"`
 	Name        string    `json:"name"`
-	TotalSeats  int       `json:"total_seats"`
-	Rows        int       `json:"rows"`
+	Rows        int       `json:"rows_count"`
 	SeatsPerRow int       `json:"seats_per_row"`
-	CreatedAt   time.Time `json:"created_at"`
+	HallType    string    `json:"hall_type"`
+	TotalSeats  int       `json:"total_seats,omitempty"`
+	CreatedAt   time.Time `json:"created_at,omitempty"`
 }
 
 type Session struct {
